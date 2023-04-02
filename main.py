@@ -8,8 +8,15 @@ def passgen(length):
     special_chars = string.punctuation
     alphabet = letters + digits + special_chars
     pwd = ""
-    for i in range(int(length)):
-        pwd += "".join(secrets.choice(alphabet))
+    while True:
+        for i in range(int(length)):
+            pwd += "".join(secrets.choice(alphabet))
+        # Loop until we meet defined password contraints
+        if (
+            any(char in special_chars for char in pwd)
+            and sum(char in digits for char in pwd) >= 2
+        ):
+            break
     return pwd
 
 
