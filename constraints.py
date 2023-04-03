@@ -13,7 +13,7 @@ def append(pwd):
 
         if (
             any(char in special_chars for char in pwd)
-            and sum(char in digits for char in pwd) >= 3
+            and sum(char in digits for char in pwd) >= 2
         ):
             break
     return pwd
