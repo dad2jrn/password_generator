@@ -9,7 +9,7 @@ The original unmodified word is provided to the user in order to prpvide for a b
 The word is then modified to be alphanumeric as well as ensuring it has at least two (2) special characters and two (2) numbers.
 
 ### TODO:
-- add uppercase to the password generated.
+- Add capability to generate a new password without having to re-run the app.
 
 ## Prerequisites
 Python 3.7 or higher
