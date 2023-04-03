@@ -3,8 +3,8 @@ def leet(pwd):
     for char in pwd:
         if char == "a":
             pwd = pwd.replace("a", "4")
-        elif char == "b":
-            pwd = pwd.replace("b", "8")
+        # elif char == "b":
+        #     pwd = pwd.replace("b", "8")
         elif char == "e":
             pwd = pwd.replace("e", "3")
         elif char == "l":
