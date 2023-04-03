@@ -1,25 +1,12 @@
-import secrets, string
-from getlength import pwd_length
-
-
-def passgen(length):
-    letters = string.ascii_letters
-    digits = string.digits
-    special_chars = string.punctuation
-    alphabet = letters + digits + special_chars
-    pwd = ""
-    while True:
-        for i in range(int(length)):
-            pwd += "".join(secrets.choice(alphabet))
-        # Loop until we meet defined password contraints
-        if (
-            any(char in special_chars for char in pwd)
-            and sum(char in digits for char in pwd) >= 2
-        ):
-            break
-    return pwd
+from word import getword
+from leet import leet
+from constraints import append
 
 
 if __name__ == "__main__":
-    length = pwd_length()
-    print(passgen(length))
+    length = input("How long of a word?  ")
+    pwd = getword(length)
+    print(f"For readability the original word is: {pwd}\n\n")
+    modify_pwd = leet(pwd)
+    final_pwd = append(modify_pwd)
+    print(final_pwd)

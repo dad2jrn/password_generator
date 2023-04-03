@@ -1,9 +1,9 @@
 import requests as req
 from requests.exceptions import HTTPError
 
-# class Words:
-def getword():
-    for url in ["https://random-word-api.herokuapp.com/word"]:
+
+def getword(length):
+    for url in [f"https://random-word-api.herokuapp.com/word?length={length}"]:
         try:
             response = req.get(url)
 
@@ -16,7 +16,4 @@ def getword():
         else:
             json_response = response.json()
             for myword in list(json_response):
-                # print(myword)
                 return myword
-
-
